@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPersonaDetalleView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appagenda.PersonaDetalleViewController">
+    <children>
+        <GridPane alignment="CENTER" hgap="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="45.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Nombre:" />
+                <Label text="Apellidos:" GridPane.rowIndex="1" />
+                <Label text="Teléfono:" GridPane.rowIndex="2" />
+                <Label text="eMail:" GridPane.rowIndex="3" />
+                <Label text="Fecha de Nacimiento:" GridPane.rowIndex="4" />
+                <Label text="Num. Hijos:" GridPane.rowIndex="5" />
+                <Label text="Estado Civil:" GridPane.rowIndex="6" />
+                <Label text="Salario:" GridPane.rowIndex="7" />
+                <Label text="Jubilación:" GridPane.rowIndex="8" />
+                <Label text="Provincia:" GridPane.rowIndex="9" />
+                <Label text="Foto:" GridPane.rowIndex="10" />
+                <TextField fx:id="textFieldNombre" GridPane.columnIndex="1" />
+                <TextField fx:id="textFieldApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="textFieldTelefono" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="textFieldEmail" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <DatePicker fx:id="datePickerFechaNacimiento" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="textFieldNumHijos" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="textFieldSalario" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <fx:define>
+                        <ToggleGroup fx:id="group" />
+                    </fx:define>
+                    <children>
+                        <RadioButton fx:id="radioButtonSoltero" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" text="Soltero/a" toggleGroup="$group" />
+                        <RadioButton fx:id="radioButtonCasado" contentDisplay="CENTER" mnemonicParsing="false" text="Casado/a" toggleGroup="$group"/>
+                        <RadioButton fx:id="radioButtonViudo" contentDisplay="CENTER" mnemonicParsing="false" text="Viudo/a" toggleGroup="$group"/>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </HBox>
+                <CheckBox fx:id="checkBoxJubilado" mnemonicParsing="false" text="Jubilado" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <ComboBox fx:id="comboBoxProvincia" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                    <children>
+                        <ImageView fx:id="imageViewFoto" fitHeight="31.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="buttonExaminar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionButtonExaminar" text="Examinar" />
+                        <Button fx:id="buttonSuprimir" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionButtonSuprimirFoto" text="Suprimir" />
+                    </children>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+                <Button fx:id="buttonGuardar" mnemonicParsing="false" onAction="#onActionButtonGuardar" text="Guardar" GridPane.columnIndex="2" />
+                <Button fx:id="buttonCancelar" mnemonicParsing="false" onAction="#onActionButtonCancelar" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </GridPane>
+    </children>
+</AnchorPane>
